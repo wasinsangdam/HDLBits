@@ -1,0 +1,41 @@
+#! /usr/bin/vvp
+:ivl_version "10.3 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "vhdl_sys";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0x563216da70d0 .scope module, "gatesv" "gatesv" 2 1;
+ .timescale 0 0;
+    .port_info 0 /INPUT 4 "in"
+    .port_info 1 /OUTPUT 3 "out_both"
+    .port_info 2 /OUTPUT 3 "out_any"
+    .port_info 3 /OUTPUT 4 "out_different"
+L_0x563216ded720 .functor AND 3, L_0x563216ded580, L_0x563216ded650, C4<111>, C4<111>;
+L_0x563216ded9a0 .functor OR 3, L_0x563216ded830, L_0x563216ded8d0, C4<000>, C4<000>;
+o0x7f07759f7168 .functor BUFZ 4, C4<zzzz>; HiZ drive
+L_0x563216dedd50 .functor XOR 4, o0x7f07759f7168, L_0x563216dedc10, C4<0000>, C4<0000>;
+v0x563216da72c0_0 .net *"_s1", 2 0, L_0x563216ded580;  1 drivers
+v0x563216decc10_0 .net *"_s13", 0 0, L_0x563216deda90;  1 drivers
+v0x563216deccf0_0 .net *"_s15", 2 0, L_0x563216dedb30;  1 drivers
+v0x563216decdb0_0 .net *"_s16", 3 0, L_0x563216dedc10;  1 drivers
+v0x563216dece90_0 .net *"_s3", 2 0, L_0x563216ded650;  1 drivers
+v0x563216decfc0_0 .net *"_s7", 2 0, L_0x563216ded830;  1 drivers
+v0x563216ded0a0_0 .net *"_s9", 2 0, L_0x563216ded8d0;  1 drivers
+v0x563216ded180_0 .net "in", 3 0, o0x7f07759f7168;  0 drivers
+v0x563216ded260_0 .net "out_any", 3 1, L_0x563216ded9a0;  1 drivers
+v0x563216ded340_0 .net "out_both", 2 0, L_0x563216ded720;  1 drivers
+v0x563216ded420_0 .net "out_different", 3 0, L_0x563216dedd50;  1 drivers
+L_0x563216ded580 .part o0x7f07759f7168, 0, 3;
+L_0x563216ded650 .part o0x7f07759f7168, 1, 3;
+L_0x563216ded830 .part o0x7f07759f7168, 0, 3;
+L_0x563216ded8d0 .part o0x7f07759f7168, 1, 3;
+L_0x563216deda90 .part o0x7f07759f7168, 0, 1;
+L_0x563216dedb30 .part o0x7f07759f7168, 1, 3;
+L_0x563216dedc10 .concat [ 3 1 0 0], L_0x563216dedb30, L_0x563216deda90;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "gatesv.v";

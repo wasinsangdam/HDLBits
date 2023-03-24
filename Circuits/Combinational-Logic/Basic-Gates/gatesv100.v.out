@@ -1,0 +1,41 @@
+#! /usr/bin/vvp
+:ivl_version "10.3 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "vhdl_sys";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0x55cb0ab6d270 .scope module, "gatesv100" "gatesv100" 2 1;
+ .timescale 0 0;
+    .port_info 0 /INPUT 100 "in"
+    .port_info 1 /OUTPUT 99 "out_both"
+    .port_info 2 /OUTPUT 99 "out_any"
+    .port_info 3 /OUTPUT 100 "out_different"
+L_0x55cb0abb3930 .functor AND 99, L_0x55cb0abb3790, L_0x55cb0abb3860, C4<111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111>, C4<111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111>;
+L_0x55cb0abb3bb0 .functor OR 99, L_0x55cb0abb3a40, L_0x55cb0abb3ae0, C4<000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000>, C4<000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000>;
+o0x7f5c99d38168 .functor BUFZ 100, C4<zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz>; HiZ drive
+L_0x55cb0abb3f60 .functor XOR 100, o0x7f5c99d38168, L_0x55cb0abb3e20, C4<0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000>, C4<0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000>;
+v0x55cb0ab81350_0 .net *"_s1", 98 0, L_0x55cb0abb3790;  1 drivers
+v0x55cb0abb2e20_0 .net *"_s13", 0 0, L_0x55cb0abb3ca0;  1 drivers
+v0x55cb0abb2f00_0 .net *"_s15", 98 0, L_0x55cb0abb3d40;  1 drivers
+v0x55cb0abb2fc0_0 .net *"_s16", 99 0, L_0x55cb0abb3e20;  1 drivers
+v0x55cb0abb30a0_0 .net *"_s3", 98 0, L_0x55cb0abb3860;  1 drivers
+v0x55cb0abb31d0_0 .net *"_s7", 98 0, L_0x55cb0abb3a40;  1 drivers
+v0x55cb0abb32b0_0 .net *"_s9", 98 0, L_0x55cb0abb3ae0;  1 drivers
+v0x55cb0abb3390_0 .net "in", 99 0, o0x7f5c99d38168;  0 drivers
+v0x55cb0abb3470_0 .net "out_any", 99 1, L_0x55cb0abb3bb0;  1 drivers
+v0x55cb0abb3550_0 .net "out_both", 98 0, L_0x55cb0abb3930;  1 drivers
+v0x55cb0abb3630_0 .net "out_different", 99 0, L_0x55cb0abb3f60;  1 drivers
+L_0x55cb0abb3790 .part o0x7f5c99d38168, 1, 99;
+L_0x55cb0abb3860 .part o0x7f5c99d38168, 0, 99;
+L_0x55cb0abb3a40 .part o0x7f5c99d38168, 1, 99;
+L_0x55cb0abb3ae0 .part o0x7f5c99d38168, 0, 99;
+L_0x55cb0abb3ca0 .part o0x7f5c99d38168, 0, 1;
+L_0x55cb0abb3d40 .part o0x7f5c99d38168, 1, 99;
+L_0x55cb0abb3e20 .concat [ 99 1 0 0], L_0x55cb0abb3d40, L_0x55cb0abb3ca0;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "gatesv100.v";

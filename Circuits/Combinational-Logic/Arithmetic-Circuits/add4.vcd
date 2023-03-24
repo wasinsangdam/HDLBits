@@ -1,0 +1,371 @@
+$date
+	Fri Nov 18 21:09:28 2022
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module add4_tb $end
+$var wire 5 ! sum [4:0] $end
+$var reg 4 " x [3:0] $end
+$var reg 4 # y [3:0] $end
+$var integer 32 $ i [31:0] $end
+$scope module inst1 $end
+$var wire 4 % x [3:0] $end
+$var wire 4 & y [3:0] $end
+$var wire 5 ' sum [4:0] $end
+$var wire 4 ( cwire [3:0] $end
+$scope module inst1 $end
+$var wire 1 ) cin $end
+$var wire 1 * x $end
+$var wire 1 + y $end
+$var wire 1 , sum $end
+$var wire 1 - cout $end
+$upscope $end
+$scope module inst2 $end
+$var wire 1 . cin $end
+$var wire 1 / x $end
+$var wire 1 0 y $end
+$var wire 1 1 sum $end
+$var wire 1 2 cout $end
+$upscope $end
+$scope module inst3 $end
+$var wire 1 3 cin $end
+$var wire 1 4 x $end
+$var wire 1 5 y $end
+$var wire 1 6 sum $end
+$var wire 1 7 cout $end
+$upscope $end
+$scope module inst4 $end
+$var wire 1 8 cin $end
+$var wire 1 9 x $end
+$var wire 1 : y $end
+$var wire 1 ; sum $end
+$var wire 1 < cout $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0<
+0;
+0:
+09
+08
+07
+06
+05
+04
+03
+02
+01
+00
+0/
+0.
+0-
+0,
+0+
+0*
+0)
+b0 (
+b0 '
+b0 &
+b0 %
+b0 $
+b0 #
+b0 "
+b0 !
+$end
+#10
+1,
+b101 !
+b101 '
+16
+1+
+14
+b1 $
+b1 #
+b1 &
+b100 "
+b100 %
+#20
+13
+12
+1.
+01
+0,
+b11 (
+1-
+16
+b1100 !
+b1100 '
+1;
+10
+1*
+04
+19
+b10 $
+b11 #
+b11 &
+b1001 "
+b1001 %
+#30
+06
+03
+18
+11
+02
+b11010 !
+b11010 '
+1;
+1<
+b1101 (
+17
+00
+15
+1:
+14
+b11 $
+b1101 #
+b1101 &
+b1101 "
+b1101 %
+#40
+0;
+0.
+03
+08
+1,
+0-
+11
+02
+b111 !
+b111 '
+16
+07
+b0 (
+0<
+0+
+10
+05
+0:
+09
+b100 $
+b10 #
+b10 &
+b101 "
+b101 %
+#50
+1.
+0,
+b1 (
+1-
+11
+b1110 !
+b1110 '
+1;
+1+
+00
+15
+1:
+04
+b101 $
+b1101 #
+b1101 &
+b1 "
+b1 %
+#60
+0;
+1<
+0.
+03
+18
+1,
+0-
+11
+02
+b10011 !
+b10011 '
+06
+b1100 (
+17
+0*
+1/
+14
+b110 $
+b110 "
+b110 %
+#70
+01
+b11001 !
+b11001 '
+1;
+0+
+1*
+0/
+19
+b111 $
+b1100 #
+b1100 &
+b1101 "
+b1101 %
+#80
+0<
+08
+11
+1;
+b1111 !
+b1111 '
+16
+b0 (
+07
+10
+0:
+04
+b1000 $
+b110 #
+b110 &
+b1001 "
+b1001 %
+#90
+05
+1:
+14
+09
+b1001 $
+b1010 #
+b1010 &
+b101 "
+b101 %
+#100
+13
+01
+12
+1.
+18
+0,
+1-
+16
+b111 (
+17
+b1100 !
+b1100 '
+1;
+1+
+15
+0:
+b1010 $
+b111 #
+b111 &
+#110
+0.
+0;
+1<
+1,
+b1110 (
+0-
+01
+b10001 !
+b10001 '
+06
+1:
+0*
+1/
+04
+b1011 $
+b1111 #
+b1111 &
+b10 "
+b10 %
+#120
+b10000 !
+b10000 '
+0,
+0+
+b1100 $
+b1110 #
+b1110 &
+#130
+1;
+0<
+08
+16
+07
+03
+b1101 !
+b1101 '
+1,
+b0 (
+02
+1+
+00
+0:
+0/
+19
+b1101 $
+b101 #
+b101 &
+b1000 "
+b1000 %
+#140
+18
+1;
+1<
+b11001 !
+b11001 '
+06
+b1100 (
+17
+1:
+14
+b1110 $
+b1101 #
+b1101 &
+b1100 "
+b1100 %
+#150
+11
+1.
+0;
+b10010 !
+b10010 '
+0,
+b1101 (
+1-
+0:
+1*
+b1111 $
+b101 #
+b101 &
+b1101 "
+b1101 %
+#160
+01
+16
+1;
+0<
+0.
+13
+08
+b1101 !
+b1101 '
+1,
+0-
+12
+b10 (
+07
+0+
+10
+05
+1:
+1/
+04
+09
+b10000 $
+b1010 #
+b1010 &
+b11 "
+b11 %
