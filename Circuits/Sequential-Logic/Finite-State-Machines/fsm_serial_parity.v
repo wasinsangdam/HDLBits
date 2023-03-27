@@ -1,11 +1,10 @@
 module fsm_serial_data (
-    input           clk,
-    input           in,
-    input           reset,
-    output  [7 : 0] out_byte,
-    output          done
+    input               clk,
+    input               in,
+    input               reset,
+    output  reg [7 : 0] out_byte,
+    output              done
 );
-    reg     [7 : 0] out_byte;
 
     parameter   [1 : 0] IDLE = 0,
                         READ = 1,
