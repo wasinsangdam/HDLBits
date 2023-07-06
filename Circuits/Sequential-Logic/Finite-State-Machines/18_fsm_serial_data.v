@@ -19,14 +19,13 @@ module fsm_serial_data (
 
     always @ (posedge clk) begin
         if (reset)  state <= IDLE;
-        else begin
-            state <= next_state;
+        else        state <= next_state;
 
-            if (state == READ) begin
-                cnt <= cnt + 1;
-            end 
-            else cnt <= 0;
-        end
+    end
+
+    always @(posedge clk) begin
+        if (state == READ) cnt <= cnt + 1'b1;
+        else               cnt <= 4'd0;
     end
 
 

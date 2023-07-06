@@ -80,7 +80,7 @@ module parity (
 );  
 
     always @(posedge clk) begin
-        if (reset)      odd <= 1'b0;
+        if      (reset) odd <= 1'b0;
         else if (in)    odd <= ~odd;
     end
 
