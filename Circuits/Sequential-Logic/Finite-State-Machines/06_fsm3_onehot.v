@@ -18,6 +18,7 @@ module fsm3onehot (
 
 endmodule
 
+
 // What does "derive equations by inspection" mean?
 // One-hot state machine encoding guarantees that exactly one state bit is 1. 
 // This means that it is possible to determine whether the state machine is in a particular state by examining only one state bit, not all state bits. 

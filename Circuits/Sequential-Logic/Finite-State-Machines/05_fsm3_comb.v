@@ -9,10 +9,10 @@ module fsm3_comb (
 
     always @ (*) begin
         case (state)
-            A : next_state <= in ? B : A;
-            B : next_state <= in ? B : C;
-            C : next_state <= in ? D : A;
-            D : next_state <= in ? B : C;
+            A : next_state = in ? B : A;
+            B : next_state = in ? B : C;
+            C : next_state = in ? D : A;
+            D : next_state = in ? B : C;
         endcase
     end
 

@@ -1,13 +1,20 @@
-module muxdff (
-    input           clk, 
+module dff8r ( 
+    input           clk,
     input           L,
     input           r_in,
     input           q_in,
-    output  reg     Q
+    output          Q
 );
 
-    always @ (posedge clk) begin
-        Q <= L ? r_in : q_in;
+    reg             rtemp;
+    wire            wtemp;
+
+    always @(posedge clk) begin
+        rtemp <= wtemp;
     end
+
+    assign wtemp = L ? r_in : q_in;
+
+    assign Q = rtemp;
 
 endmodule

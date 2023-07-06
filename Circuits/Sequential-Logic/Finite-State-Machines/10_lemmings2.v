@@ -26,8 +26,8 @@ module lemmings2 (
         endcase
     end
 
-    assign aaah = (state == AH_L | state == AH_R);
-    assign walk_left = (state == LEFT);
+    assign aaah       = (state == AH_L) | (state == AH_R);
+    assign walk_left  = (state == LEFT);
     assign walk_right = (state == RIGHT);   
 
 endmodule

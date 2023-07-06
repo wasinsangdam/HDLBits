@@ -1,7 +1,7 @@
-module fsm2_sync_reset (
+module fsm2_async_reset (
     input   clk,
-    input   reset,
-    input   j,
+    input   areset,
+    input   j, 
     input   k,
     output  out
 );
@@ -9,8 +9,8 @@ module fsm2_sync_reset (
     parameter   OFF = 0, ON = 1;
     reg         state, next_state;
 
-    always @ (posedge clk) begin
-        if (reset)
+    always @ (posedge clk, posedge areset) begin
+        if (areset)
             state <= OFF;
         else
             state <= next_state;
@@ -18,11 +18,11 @@ module fsm2_sync_reset (
 
     always @ (*) begin
         case (state)
-            OFF : next_state <= j ? ON  : OFF;
-            ON  : next_state <= k ? OFF : ON;
+            OFF : next_state = j ? ON  : OFF;
+            ON  : next_state = k ? OFF : ON;
         endcase
     end
 
     assign out = state;
-    
+
 endmodule

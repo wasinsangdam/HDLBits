@@ -3,15 +3,16 @@ module always_case2 (
     output reg  [1 : 0] pos
 );
 
-    always @ (*) begin
-        case (in)
-            in[0] == 1'b1 : pos = 0;
-            in[1] == 1'b1 : pos = 1;
-            in[2] == 1'b1 : pos = 2;
-            in[3] == 1'b1 : pos = 3;
 
-            default : pos = 2'b00;
-
+    always @(*) begin			// Combinational always block
+        casex (in)
+            
+           4'bxxx1 :	pos = 2'b00;
+           4'bxx1x :	pos = 2'b01;
+           4'bx1xx :	pos = 2'b10; 
+           4'b1xxx : 	pos = 2'b11;
+           
+           default : 	pos = 2'b00;
         endcase
     end
 
