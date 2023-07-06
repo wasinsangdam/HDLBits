@@ -26,7 +26,7 @@ module fsm_serialdp (
     end
 
     always @(posedge clk) begin
-        if (reset)              cnt <= 4'b0;
+        if      (reset)         cnt <= 4'b0;
         else if (state == READ) cnt <= cnt + 1;
         else                    cnt <= 4'b0;
     end
@@ -50,8 +50,8 @@ module fsm_serialdp (
         endcase
     end
 
-    assign out_byte = (state == DONE) ? temp : 8'bx;
-    assign done = (state == DONE);
+    assign out_byte      = (state == DONE) ? temp : 8'bx;
+    assign done          = (state == DONE);
     assign parity_enable = ~(state == READ);
 
     parity u0 (.clk(clk), .reset(parity_enable), .in(in), .odd(odd));
