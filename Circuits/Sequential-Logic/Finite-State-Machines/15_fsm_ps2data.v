@@ -15,25 +15,25 @@ module ps2data (
     reg         [7 : 0] temp1, temp2, temp3;
 
     always @ (posedge clk) begin
-        if (reset)  begin
+        if (reset)
             state <= BYTE1;
-        end
-        else begin
-            state <= next_state;
-            
-            if (state == BYTE1)      temp1 <= in;
-            else if (state == BYTE2) temp2 <= in;
-            else if (state == BYTE3) temp3 <= in;
-            else                     temp1 <= in;
-        end
+        else 
+            state <= next_state;     
+    end
+
+    always @(posedge clk) begin
+        if      (state == BYTE1) temp1 <= in;
+        else if (state == BYTE2) temp2 <= in;
+        else if (state == BYTE3) temp3 <= in;
+        else                     temp3 <= in;
     end
 
     always @ (*) begin
         case (state)
-            BYTE1 : next_state <= in[3] ? BYTE2 : BYTE1;
-            BYTE2 : next_state <= BYTE3;
-            BYTE3 : next_state <= DONE;
-            DONE  : next_state <= in[3] ? BYTE2 : BYTE1;
+            BYTE1 : next_state = in[3] ? BYTE2 : BYTE1;
+            BYTE2 : next_state = BYTE3;
+            BYTE3 : next_state = DONE;
+            DONE  : next_state = in[3] ? BYTE2 : BYTE1;
         endcase
     end
 

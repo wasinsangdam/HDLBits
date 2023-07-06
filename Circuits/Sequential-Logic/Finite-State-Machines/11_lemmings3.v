@@ -28,24 +28,24 @@ module lemmings3 (
     always @ (*) begin
         case (state)
             LEFT : begin
-                if (!ground)        next_state <= AH_L;
-                else if (dig)       next_state <= DIG_L;
-                else if (bump_left) next_state <= RIGHT;
-                else                next_state <= LEFT;
+                if (!ground)        next_state = AH_L;
+                else if (dig)       next_state = DIG_L;
+                else if (bump_left) next_state = RIGHT;
+                else                next_state = LEFT;
             end
 
             RIGHT : begin
-                if (!ground)         next_state <= AH_R;
-                else if (dig)        next_state <= DIG_R;
-                else if (bump_right) next_state <= LEFT;
-                else                 next_state <= RIGHT;
+                if (!ground)         next_state = AH_R;
+                else if (dig)        next_state = DIG_R;
+                else if (bump_right) next_state = LEFT;
+                else                 next_state = RIGHT;
             end
 
-            DIG_L : next_state <= ground ? DIG_L : AH_L;
-            DIG_R : next_state <= ground ? DIG_R : AH_R;
+            DIG_L : next_state = ground ? DIG_L : AH_L;
+            DIG_R : next_state = ground ? DIG_R : AH_R;
 
-            AH_L  : next_state <= ground ? LEFT  : AH_L;
-            AH_R  : next_state <= ground ? RIGHT : AH_R;
+            AH_L  : next_state = ground ? LEFT  : AH_L;
+            AH_R  : next_state = ground ? RIGHT : AH_R;
         endcase
     end
 

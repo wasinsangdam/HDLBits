@@ -19,10 +19,10 @@ module lemmings2 (
 
     always @ (*) begin
         case (state)
-            LEFT  : next_state <= (~ground) ? AH_L : bump_left  ? RIGHT : LEFT;
-            RIGHT : next_state <= (~ground) ? AH_R : bump_right ? LEFT  : RIGHT;
-            AH_L  : next_state <= (~ground) ? AH_L : LEFT;
-            AH_R  : next_state <= (~ground) ? AH_R : RIGHT;
+            LEFT  : next_state = (~ground) ? AH_L : bump_left  ? RIGHT : LEFT;
+            RIGHT : next_state = (~ground) ? AH_R : bump_right ? LEFT  : RIGHT;
+            AH_L  : next_state = (~ground) ? AH_L : LEFT;
+            AH_R  : next_state = (~ground) ? AH_R : RIGHT;
         endcase
     end
 

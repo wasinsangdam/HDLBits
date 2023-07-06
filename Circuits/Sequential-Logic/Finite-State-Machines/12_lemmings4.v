@@ -39,39 +39,39 @@ module lemmings4 (
     always @ (*) begin
         case (state)
             LEFT : begin
-                if (!ground)        next_state <= AH_L;
-                else if (dig)       next_state <= DIG_L;
-                else if (bump_left) next_state <= RIGHT;
-                else                next_state <= LEFT;
+                if (!ground)        next_state = AH_L;
+                else if (dig)       next_state = DIG_L;
+                else if (bump_left) next_state = RIGHT;
+                else                next_state = LEFT;
             end
 
             RIGHT : begin
-                if (!ground)         next_state <= AH_R;
-                else if (dig)        next_state <= DIG_R;
-                else if (bump_right) next_state <= LEFT;
-                else                 next_state <= RIGHT;
+                if (!ground)         next_state = AH_R;
+                else if (dig)        next_state = DIG_R;
+                else if (bump_right) next_state = LEFT;
+                else                 next_state = RIGHT;
             end
 
             AH_L : begin
                 if (ground) begin
-                    if (cnt > 5'd19) next_state <= SPLAT;
-                    else             next_state <= LEFT;
+                    if (cnt > 5'd19) next_state = SPLAT;
+                    else             next_state = LEFT;
                 end 
-                else             next_state <= AH_L;
+                else                 next_state = AH_L;
             end
 
             AH_R : begin
                 if (ground) begin
-                    if (cnt > 5'd19) next_state <= SPLAT;
-                    else             next_state <= RIGHT;
+                    if (cnt > 5'd19) next_state = SPLAT;
+                    else             next_state = RIGHT;
                 end 
-                else             next_state <= AH_R;
+                else                 next_state = AH_R;
             end
 
-            SPLAT : next_state <= SPLAT;
+            SPLAT : next_state = SPLAT;
 
-            DIG_L : next_state <= (!ground) ? AH_L : DIG_L;
-            DIG_R : next_state <= (!ground) ? AH_R : DIG_R;
+            DIG_L : next_state = (!ground) ? AH_L : DIG_L;
+            DIG_R : next_state = (!ground) ? AH_R : DIG_R;
 
         endcase
     end

@@ -27,10 +27,10 @@ module ps2 (
 
     always @ (*) begin
         case (state)
-            BYTE1 : next_state <= in[3] ? BYTE2 : BYTE1;
-            BYTE2 : next_state <= BYTE3;
-            BYTE3 : next_state <= DONE;
-            DONE  : next_state <= in[3] ? BYTE2 : BYTE1;
+            BYTE1 : next_state = in[3] ? BYTE2 : BYTE1;
+            BYTE2 : next_state = BYTE3;
+            BYTE3 : next_state = DONE;
+            DONE  : next_state = in[3] ? BYTE2 : BYTE1;
         endcase
     end
 
