@@ -31,7 +31,7 @@ module fsm_q3b (
 
     assign z = (state == STATE3) || (state == STATE4);
 
-    reg [55 : 0] debug;
+    reg [47 : 0] debug;
     
     always @(*) begin
         case(state) 
