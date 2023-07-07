@@ -5,9 +5,6 @@ module fsm_serial_data (
     output reg [7 : 0]  out_byte,
     output              done
 );
-    
-
-
     parameter   [1 : 0] IDLE = 0,
                         READ = 1,
                         DONE = 2,

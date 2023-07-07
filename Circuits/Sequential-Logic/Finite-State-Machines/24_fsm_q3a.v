@@ -11,7 +11,7 @@ module fsm_q3a (
 
     reg [1 : 0] state, next_state;
 
-    reg [1 : 0] one_cnt;
+    reg [1 : 0] w_cnt;
     reg [1 : 0] clk_cnt;
 
     always@(posedge clk) begin
@@ -19,16 +19,18 @@ module fsm_q3a (
         else        state <= next_state;
     end 
 
+    // Count w signal
     always@(posedge clk) begin
-        if (reset || state == A)    one_cnt <= 2'b0;
-        else if (clk_cnt < 3)       one_cnt <= one_cnt + w;
-        else                        one_cnt <= w ? 1 : 0;
+        if      (reset || state == A)   w_cnt <= 2'd0;
+        else if (clk_cnt < 3)           w_cnt <= w_cnt + w;
+        else                            w_cnt <= w ? 1 : 0;
     end
     
+    // Count clk signal (1 2 3 1 2 3 1 2 3 ...)
     always @(posedge clk) begin
-        if (reset || state == A)    clk_cnt <= 2'd0;
-        else if (clk_cnt < 3)       clk_cnt <= clk_cnt + 1;
-        else                        clk_cnt <= 1;
+        if      (reset || state == A)   clk_cnt <= 2'd0;
+        else if (clk_cnt < 3)           clk_cnt <= clk_cnt + 'd1;
+        else                            clk_cnt <= 1'd1;
     end
 
     always@(*) begin
@@ -38,7 +40,8 @@ module fsm_q3a (
         endcase
     end
 
-    assign z = (one_cnt == 2) & (clk_cnt == 3);
+    // z = 1, only when w_cnt = 2 and clk_cnt = 3  
+    assign z = (w_cnt == 2) & (clk_cnt == 3);
 
 
 endmodule

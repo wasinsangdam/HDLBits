@@ -16,8 +16,8 @@ module twos_comple_mealy (
     
     always @(*) begin
         case (state)
-            STATE0 : next_state = x ? STATE1 : STATE0;
-            STATE1 : next_state = STATE1;
+            STATE0  : next_state = x ? STATE1 : STATE0;
+            STATE1  : next_state = STATE1;
             default : next_state = 2'bxx;
         endcase
     end
